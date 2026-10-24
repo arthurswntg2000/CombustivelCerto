@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CombustívelCerto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CombustívelCerto</h1>
+    <p>Calcule o consumo e o custo estimado da sua viagem</p>
+  </header>
+
+  <main>
+    <section class="calculator-card">
+      <form id="calc-form">
+        <div class="form-group">
+          <label for="distancia">Distância (km):</label>
+          <input type="number" id="distancia" step="0.1" min="0" placeholder="Ex: 150" required>
+        </div>
+
+        <div class="form-group">
+          <label for="consumo">Consumo médio (km/L):</label>
+          <input type="number" id="consumo" step="0.1" min="0" placeholder="Ex: 10" required>
+        </div>
+
+        <div class="form-group">
+          <label for="preco">Preço por litro (R$):</label>
+          <input type="number" id="preco" step="0.01" min="0" placeholder="Ex: 5.50" required>
+        </div>
+
+        <button type="submit" id="btn-calcular">Calcular Custo</button>
+      </form>
+
+      <div id="mensagem-erro" class="error-msg" aria-live="polite"></div>
+
+      <section id="area-resultado" class="result-box hidden">
+        <h2>Resultado do Cálculo</h2>
+        <p id="res-litros"></p>
+        <p id="res-custo"></p>
+      </section>
+    </section>
+
+    <section class="history-card">
+      <div class="history-header">
+        <h2>Histórico (últimos 5)</h2>
+        <button id="btn-limpar-historico" type="button">Limpar Histórico</button>
+      </div>
+      <ul id="lista-historico"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
